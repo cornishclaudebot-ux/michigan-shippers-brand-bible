@@ -1,0 +1,723 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Michigan Shippers Supply &middot; Brand Bible</title>
+<meta name="description" content="The brand bible for Michigan Shippers Supply, a family-owned custom label printer in Spring Lake, Michigan since 1959. Logo, color, type, voice, and standards." />
+<meta name="theme-color" content="#16222e" />
+<link rel="icon" type="image/png" href="images/logo-mark.png" />
+<style>
+/* ============================================================
+   MICHIGAN SHIPPERS SUPPLY · BRAND BIBLE
+   Built on the michiganshippers.com design system.
+   Heritage paper + brand navy + press blue, gold for white-glove.
+   ============================================================ */
+:root{
+  --cream:#f4f1ea;        /* warm heritage paper */
+  --cream-2:#e9ebee;      /* cool light alt */
+  --paper-edge:#ece8df;
+  --ink:#222e39;          /* body ink */
+  --ink-soft:#586774;     /* secondary text */
+  --navy:#1c2c3e;         /* deep brand navy */
+  --navy-2:#264a6b;
+  --blue:#2f7dc1;         /* press blue, from the mark */
+  --blue-dark:#215e93;
+  --blue-tint:#7bb6e6;    /* light blue, on dark grounds */
+  --steel:#6c7a85;        /* the mark's grey faces */
+  --line:#d7d3ca;         /* rules on paper */
+  --line-dk:rgba(255,255,255,.12);
+  --gold:#cda85e;         /* white-glove gold */
+  --gold-lt:#ecd6a4;
+  --gold-dk:#b58a3c;
+  --maxw:1060px;
+  --serif:Georgia,'Times New Roman',serif;
+  --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--cream);color:var(--ink);
+  font-family:var(--sans);font-size:16px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:700;line-height:1.13;color:var(--navy)}
+::selection{background:var(--blue);color:#fff}
+
+/* faint paper grain across the whole book */
+body::before{content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ---------- shared spread shell ---------- */
+.spread{position:relative;max-width:var(--maxw);margin-inline:auto;padding:88px 48px;border-bottom:1px solid var(--line)}
+.spread:last-child{border-bottom:none}
+.spread.dark{background:linear-gradient(135deg,#22364c 0%,#192635 60%,#121c28 100%);color:var(--cream);max-width:none;border-bottom:none}
+.spread.dark h1,.spread.dark h2,.spread.dark h3,.spread.dark h4{color:#fff}
+.spread.dark .wrap,.spread.alt .wrap{max-width:var(--maxw);margin-inline:auto}
+.spread.alt{background:var(--cream-2)}
+.spread.dark::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 82% 14%,rgba(47,125,193,.26),transparent 48%);pointer-events:none}
+.spread.dark > *{position:relative;z-index:1}
+.secno{position:absolute;top:34px;right:48px;font-family:var(--serif);font-style:italic;font-size:14px;letter-spacing:.14em;color:var(--steel)}
+.spread.dark .secno{color:#7e93a6}
+
+.eyebrow{font-family:var(--sans);text-transform:uppercase;letter-spacing:.2em;font-size:.72rem;font-weight:800;color:var(--blue-dark);
+  display:inline-flex;align-items:center;gap:.8em;margin-bottom:16px}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--blue);display:inline-block}
+.spread.dark .eyebrow{color:var(--blue-tint)}
+.spread.dark .eyebrow::before{background:var(--blue-tint)}
+
+.shead{margin-bottom:40px;max-width:62ch}
+.shead h2{font-size:clamp(34px,5.4vw,56px);margin:0}
+.shead p{color:var(--ink-soft);font-size:1.1rem;margin-top:16px;max-width:56ch}
+.spread.dark .shead p{color:#c2cfda}
+
+.lead{font-family:var(--serif);font-size:clamp(24px,3.6vw,40px);line-height:1.22;font-weight:700;color:var(--navy);max-width:20ch}
+.lead .b{color:var(--blue-dark)}
+.spread.dark .lead{color:#fff}.spread.dark .lead .b{color:var(--blue-tint)}
+
+.big-quote{font-family:var(--serif);font-weight:700;line-height:1.12;font-size:clamp(30px,5vw,54px);color:var(--navy);margin:0}
+.big-quote .b{color:var(--blue-dark)}
+.spread.dark .big-quote{color:#fff}.spread.dark .big-quote .b{color:var(--blue-tint)}
+
+/* ---------- cards / grids ---------- */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:30px}
+.cols-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:30px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px;box-shadow:0 6px 18px rgba(28,44,62,.05)}
+.spread.alt .card{background:#fff}
+.spread.dark .card{background:rgba(244,241,234,.05);border-color:var(--line-dk);box-shadow:none}
+.card .num{font-family:var(--serif);font-size:.95rem;color:var(--blue-dark);letter-spacing:.16em;font-weight:700}
+.spread.dark .card .num{color:var(--blue-tint)}
+.card h3{font-size:1.25rem;margin:8px 0 10px}
+.card p{color:var(--ink-soft);font-size:.97rem;margin:0}
+.spread.dark .card p{color:#bccadb}
+.card p .hl{color:var(--navy);font-weight:600}.spread.dark .card p .hl{color:#fff}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:22px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px 16px;text-align:center;box-shadow:0 6px 18px rgba(28,44,62,.05)}
+.spread.dark .stat{background:rgba(244,241,234,.05);border-color:var(--line-dk);box-shadow:none}
+.stat .n{font-family:var(--serif);font-size:clamp(30px,4.4vw,44px);color:var(--navy);line-height:1;font-weight:700}
+.spread.dark .stat .n{color:var(--blue-tint)}
+.stat .l{font-size:.82rem;color:var(--ink-soft);letter-spacing:.02em;margin-top:9px;font-weight:600;line-height:1.35}
+.spread.dark .stat .l{color:#bccadb}
+
+/* ---------- COVER ---------- */
+.cover{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+  padding:64px 40px;overflow:hidden;color:var(--cream);
+  background:linear-gradient(135deg,#22364c 0%,#192635 58%,#101a25 100%)}
+.cover::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(circle at 78% 16%,rgba(47,125,193,.30),transparent 46%),radial-gradient(circle at 12% 92%,rgba(201,164,95,.12),transparent 42%)}
+.cover > *{position:relative;z-index:1}
+.cover .mark{width:120px;height:120px;margin-bottom:30px;filter:drop-shadow(0 12px 26px rgba(0,0,0,.4))}
+.cover .est{font-family:var(--sans);text-transform:uppercase;letter-spacing:.42em;font-size:.74rem;font-weight:800;color:var(--blue-tint);margin-bottom:18px}
+.cover h1{color:#fff;font-size:clamp(46px,9vw,104px);letter-spacing:.5px;line-height:.96;margin:0}
+.cover h1 .l2{display:block;color:#dfe8f1}
+.cover .supply{display:block;font-family:var(--sans);font-weight:800;letter-spacing:.5em;font-size:clamp(16px,3vw,26px);color:var(--blue-tint);margin-top:14px;text-transform:uppercase}
+.cover .bk{font-family:var(--serif);font-style:italic;font-size:clamp(18px,2.6vw,26px);color:#cdd9e4;margin:30px 0 0}
+.cover .tag{color:#eaf1f7;font-size:clamp(15px,2vw,19px);max-width:34ch;margin:20px auto 0;font-weight:500;line-height:1.5}
+.cover .meta{margin-top:48px;color:#8ea4b6;font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;
+  display:flex;gap:18px;justify-content:center;flex-wrap:wrap;align-items:center}
+.cover .meta span.dot{opacity:.5}
+.cover .rule{width:64px;height:3px;background:linear-gradient(90deg,var(--gold-dk),var(--gold-lt),var(--gold-dk));margin:34px auto 0;border-radius:2px}
+
+/* ---------- logo section ---------- */
+.logo-hero{display:flex;align-items:center;justify-content:center;padding:56px;border-radius:16px;border:1px solid var(--line);
+  background:linear-gradient(160deg,#fff,var(--cream-2));box-shadow:0 10px 30px rgba(28,44,62,.08)}
+.logo-hero img{height:128px;width:auto}
+.logo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+.logo-tile{border:1px solid var(--line);border-radius:14px;aspect-ratio:4/3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;position:relative;overflow:hidden;padding:20px}
+.logo-tile img{max-height:62%;width:auto}
+.logo-tile .cap{position:absolute;bottom:12px;left:0;right:0;text-align:center;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--steel);font-weight:700}
+.t-paper{background:var(--cream)} .t-cool{background:var(--cream-2)} .t-navy{background:var(--navy)} .t-navy .cap{color:#8ea4b6}
+.t-blue{background:var(--blue)} .t-blue .cap{color:#cfe6fb}
+.clearspace{margin-top:18px;border:1px solid var(--line);border-radius:14px;background:#fff;padding:26px;display:flex;gap:26px;align-items:center;flex-wrap:wrap}
+.clearspace .box{position:relative;flex:none;padding:22px;border:1px dashed var(--blue);border-radius:10px;background:var(--cream)}
+.clearspace .box img{height:64px;width:auto}
+.clearspace .box .m{position:absolute;background:rgba(47,125,193,.12);}
+.clearspace .txt{flex:1;min-width:220px}
+.clearspace .txt h4{font-size:1.05rem;margin-bottom:6px}
+.clearspace .txt p{color:var(--ink-soft);font-size:.92rem;margin:0}
+
+/* do / dont */
+.do-dont{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
+.dd{border:1px solid var(--line);border-radius:14px;padding:22px 24px;background:#fff}
+.dd.do{background:linear-gradient(160deg,rgba(47,125,193,.07),#fff)}
+.dd.dont{background:linear-gradient(160deg,rgba(176,72,60,.06),#fff)}
+.dd h4{margin:0 0 12px;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;font-family:var(--sans);font-weight:800;display:flex;align-items:center;gap:8px}
+.dd.do h4{color:var(--blue-dark)} .dd.dont h4{color:#b0483c}
+.dd ul{list-style:none;margin:0;padding:0}
+.dd li{padding:9px 0;border-top:1px solid var(--line);font-size:.95rem;color:var(--ink);display:flex;gap:10px}
+.dd li:first-child{border-top:none}
+.dd li::before{flex:none;font-weight:800;margin-top:1px}
+.dd.do li::before{content:"\2713";color:var(--blue-dark)}
+.dd.dont li::before{content:"\2715";color:#b0483c}
+
+/* ---------- color ---------- */
+.pal-name{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px}
+.pal-name h3{font-size:1.4rem;margin:0}
+.pal-name span{color:var(--steel);font-size:.9rem}
+.sw-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.sw{border:1px solid var(--line);border-radius:13px;overflow:hidden;background:#fff;box-shadow:0 5px 14px rgba(28,44,62,.05)}
+.sw .chip{height:92px}
+.sw .chip.ring{box-shadow:inset 0 0 0 1px rgba(28,44,62,.12)}
+.sw .meta{padding:12px 13px 15px}
+.sw .meta .nm{font-weight:700;font-size:.9rem;color:var(--navy)}
+.sw .meta .hx{color:var(--ink-soft);font-size:.78rem;font-family:var(--serif);letter-spacing:.06em;margin-top:3px;text-transform:uppercase}
+.sw .meta .role{color:var(--steel);font-size:.74rem;margin-top:7px;line-height:1.4}
+.star{color:var(--gold-dk)}
+.note{margin-top:18px;font-size:.92rem;color:var(--ink-soft);background:var(--cream);border:1px solid var(--line);border-left:3px solid var(--blue);border-radius:10px;padding:14px 16px}
+.note.gold{border-left-color:var(--gold)}
+
+/* ---------- typography ---------- */
+.type-spec{border:1px solid var(--line);border-radius:14px;padding:30px;background:#fff;margin-top:16px;box-shadow:0 6px 18px rgba(28,44,62,.05)}
+.type-spec .role{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--blue-dark);font-weight:800;font-family:var(--sans)}
+.type-spec .name{font-family:var(--serif);font-size:clamp(46px,8vw,84px);line-height:.92;margin:10px 0 8px;color:var(--navy);font-weight:700}
+.type-spec .name.sans{font-family:var(--sans);font-weight:800;letter-spacing:-.01em}
+.type-spec .glyphs{color:var(--ink-soft);font-size:1.05rem;letter-spacing:.04em;font-family:var(--serif)}
+.type-spec .glyphs.sans{font-family:var(--sans)}
+.type-spec .use{color:var(--steel);font-size:.9rem;margin-top:16px}.type-spec .use b{color:var(--navy)}
+
+/* ---------- voice ---------- */
+.voice-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}
+.vc{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px;box-shadow:0 6px 18px rgba(28,44,62,.05)}
+.vc h4{margin:0 0 14px;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);font-family:var(--sans);font-weight:800}
+.row{display:flex;flex-wrap:wrap;gap:9px}
+.chip-tag{border:1px solid var(--line);border-radius:999px;padding:8px 15px;font-size:.86rem;font-weight:600;color:var(--navy);background:var(--cream)}
+.chip-tag.b{border-color:rgba(47,125,193,.45);color:var(--blue-dark);background:rgba(47,125,193,.06)}
+.chip-tag.no{border-color:rgba(176,72,60,.4);color:#b0483c;background:rgba(176,72,60,.05)}
+.say{font-size:.97rem;color:var(--ink-soft);line-height:1.6}.say b{color:var(--navy)}
+
+/* ---------- capabilities ---------- */
+.cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
+.cap{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 20px;display:flex;gap:14px;align-items:flex-start;box-shadow:0 5px 14px rgba(28,44,62,.04)}
+.cap .ic{flex:none;width:40px;height:40px;border-radius:9px;background:var(--cream-2);display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+.cap b{display:block;font-family:var(--serif);color:var(--navy);font-size:1rem;margin-bottom:2px}
+.cap small{color:var(--ink-soft);font-size:.84rem;line-height:1.4;display:block}
+.method{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+.method .m{border:1px solid var(--line);border-radius:14px;padding:24px;background:linear-gradient(160deg,var(--cream-2),#fff)}
+.method .m h4{font-size:1.15rem;margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.method .m .k{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-dark);font-weight:800;font-family:var(--sans)}
+.method .m p{color:var(--ink-soft);font-size:.92rem;margin-top:6px}
+
+/* ---------- white glove ---------- */
+.glove-card{position:relative;border-radius:18px;overflow:hidden;margin-top:8px;
+  background:linear-gradient(160deg,#22344a,#172534 60%,#111a25);border:1px solid rgba(201,164,95,.4);box-shadow:0 26px 60px rgba(16,26,40,.4)}
+.glove-card .accent{height:4px;background:linear-gradient(90deg,var(--gold-dk),var(--gold-lt) 50%,var(--gold-dk))}
+.glove-head{padding:38px 40px 6px}
+.glove-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,164,95,.14);border:1px solid rgba(201,164,95,.5);color:var(--gold-lt);
+  font-weight:800;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;padding:8px 15px;border-radius:30px;margin-bottom:18px;font-family:var(--sans)}
+.glove-card h3{color:#fff;font-size:clamp(20px,2.6vw,28px);line-height:1.22;max-width:22ch;margin:0}
+.glove-card .glead{color:#c5d2dd;font-size:1.02rem;line-height:1.7;max-width:62ch;margin:14px 0 0}
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(201,164,95,.22);margin-top:30px;border-top:1px solid rgba(201,164,95,.22)}
+.pillar{background:linear-gradient(160deg,#1b2a3b,#131e29);padding:24px 22px}
+.pillar h4{font-family:var(--serif);color:var(--gold-lt);font-size:1rem;margin:0 0 8px;font-weight:700}
+.pillar p{color:#aebcc9;font-size:.88rem;line-height:1.55;margin:0}
+
+/* ---------- proof lids ---------- */
+.lid-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:26px}
+.lid{display:flex;flex-direction:column;align-items:center;text-align:center}
+.lid .circle{width:100%;aspect-ratio:1/1;border-radius:50%;overflow:hidden;border:1px solid var(--line);box-shadow:0 10px 24px rgba(28,44,62,.16);background:#fff}
+.spread.dark .lid .circle{border-color:rgba(255,255,255,.16)}
+.lid .circle img{width:100%;height:100%;object-fit:cover}
+.lid figcaption{margin-top:12px;font-size:.86rem;color:var(--ink-soft);font-weight:600}
+.spread.dark .lid figcaption{color:#bccadb}
+
+/* photo band */
+.photo-band{margin-top:30px;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 14px 34px rgba(28,44,62,.18);position:relative}
+.photo-band img{width:100%;max-height:300px;object-fit:cover;display:block}
+.photo-band figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 22px 14px;color:#fff;font-size:.86rem;font-weight:600;
+  background:linear-gradient(transparent,rgba(16,26,40,.82))}
+
+/* rules */
+.rules{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:10px}
+.rule-col{border:1px solid var(--line);border-radius:16px;padding:28px;background:#fff}
+.rule-col.do{background:linear-gradient(160deg,rgba(47,125,193,.08),#fff)}
+.rule-col.dont{background:linear-gradient(160deg,rgba(176,72,60,.06),#fff)}
+.rule-col h3{font-size:1.5rem;margin:0 0 16px;display:flex;align-items:center;gap:10px}
+.rule-col.do h3{color:var(--blue-dark)} .rule-col.dont h3{color:#b0483c}
+.rule-col ul{list-style:none;margin:0;padding:0}
+.rule-col li{padding:11px 0;border-top:1px solid var(--line);font-size:.97rem;color:var(--ink);display:flex;gap:11px}
+.rule-col li:first-child{border-top:none}
+.rule-col li::before{content:"";width:8px;height:8px;border-radius:50%;margin-top:8px;flex:none}
+.rule-col.do li::before{background:var(--blue)} .rule-col.dont li::before{background:#b0483c}
+
+/* contact strip */
+.contact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:26px}
+.cinfo{display:flex;gap:14px;align-items:flex-start;background:rgba(244,241,234,.05);border:1px solid var(--line-dk);border-radius:12px;padding:18px 20px}
+.cinfo .ic{flex:none;width:40px;height:40px;border-radius:9px;background:rgba(47,125,193,.16);display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.cinfo b{display:block;color:#fff;font-family:var(--serif);font-size:1rem;margin-bottom:2px}
+.cinfo span,.cinfo a{color:#bccadb;font-size:.92rem}
+.cinfo a{color:var(--blue-tint);font-weight:600;text-decoration:none}
+
+/* ---------- back cover ---------- */
+.back{position:relative;min-height:74vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+  padding:70px 40px;color:var(--cream);overflow:hidden;max-width:none;
+  background:linear-gradient(135deg,#22364c 0%,#192635 58%,#101a25 100%)}
+.back::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 30%,rgba(47,125,193,.22),transparent 60%)}
+.back > *{position:relative;z-index:1}
+.back .mark{width:72px;height:72px;margin-bottom:26px}
+.back .motto{font-family:var(--serif);font-weight:700;line-height:1.12;font-size:clamp(28px,5vw,52px);color:#fff;max-width:18ch;margin:0}
+.back .motto .b{color:var(--blue-tint)}
+.back .rule{width:60px;height:3px;background:linear-gradient(90deg,var(--gold-dk),var(--gold-lt),var(--gold-dk));margin:30px auto;border-radius:2px}
+.back .fine{color:#8ea4b6;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;line-height:2}
+
+@media (max-width:880px){
+  .cols,.cols-3,.voice-grid,.method,.rules,.do-dont,.contact-grid{grid-template-columns:1fr}
+  .sw-grid,.cap-grid,.lid-grid,.pillars{grid-template-columns:repeat(2,1fr)}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .logo-grid{grid-template-columns:1fr}
+  .spread{padding:62px 26px}
+}
+
+/* ============ PRINT (PDF export) ============
+   Light sections flow continuously on one uniform paper ground, so pages
+   fill top-to-bottom with no orphan half-pages. Full-bleed dark sections
+   (cover, white-glove, contact, back) each own their page(s) cleanly. */
+@media print{
+  @page{size:Letter portrait;margin:0}
+  html,body{background:var(--cream)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body::before{display:none}
+  .spread{max-width:none;width:100%;border:none;min-height:auto;padding:36px 56px 28px}
+  .spread:not(.dark){background:var(--cream)!important}
+  .spread > .wrap{max-width:none;margin:0}
+  .secno{display:none}
+  /* full-bleed dark sections + covers own their pages */
+  .cover,.back,.spread.dark{page-break-before:always;break-before:page;page-break-after:always;break-after:page;max-width:none;width:100%;border:none}
+  .cover{page-break-before:avoid;break-before:avoid;min-height:97vh;padding:62px 54px}
+  .back{page-break-after:avoid;break-after:avoid;min-height:96vh;padding:66px 54px}
+  /* keep the navy gradient on dark spreads (the cream !important above must not touch them) and let it fill the page */
+  .spread.dark{padding:54px 56px;min-height:96vh;background:linear-gradient(135deg,#22364c 0%,#192635 60%,#121c28 100%)!important}
+  /* a Letter page is only 816px wide, which trips the 880px mobile rules.
+     Restore the desktop multi-column grids so print stays compact & designed. */
+  .cols,.do-dont,.rules,.method,.voice-grid,.contact-grid{grid-template-columns:1fr 1fr}
+  .cols-3,.cap-grid,.lid-grid{grid-template-columns:repeat(3,1fr)}
+  .sw-grid,.stats,.pillars,.logo-grid{grid-template-columns:repeat(4,1fr)}
+  .logo-grid{grid-template-columns:repeat(3,1fr)}
+  /* densify type a touch for paper */
+  .shead{margin-bottom:26px}
+  .shead h2{font-size:32px}
+  .big-quote{font-size:29px;margin-bottom:8px}
+  .lead{font-size:26px}
+  .cols,.cols-3,.cap-grid,.method,.voice-grid,.lid-grid,.logo-grid,.do-dont,.rules,.stats{margin-top:18px}
+  /* never split an individual component across pages */
+  .card,.sw,.stat,.type-spec,.vc,.cap,.dd,.rule-col,.logo-tile,.lid,.method .m,.pillar,.cinfo,.note,.big-quote,.lead,.glove-card,.photo-band,.logo-hero,.clearspace,.pal-name{
+    break-inside:avoid;page-break-inside:avoid}
+  .eyebrow,.shead{break-after:avoid;page-break-after:avoid}
+}
+</style>
+</head>
+<body>
+
+<!-- reusable isometric box mark (faithful to the official logo) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="msmark" viewBox="0 0 120 122">
+    <clipPath id="msTopClip"><polygon points="60,16 104,40 60,64 16,40"/></clipPath>
+    <polygon points="16,40 60,64 60,108 16,84" fill="#c7ccd0"/>
+    <polygon points="60,64 104,40 104,84 60,108" fill="#fbfcfd"/>
+    <polygon points="16,84 104,84 60,108" fill="#2f7dc1"/>
+    <polygon points="60,16 104,40 60,64 16,40" fill="#fbfcfd"/>
+    <g clip-path="url(#msTopClip)" stroke="#15202b" stroke-width="3.4" stroke-linecap="round">
+      <line x1="4" y1="40" x2="80" y2="-3"/><line x1="12" y1="48" x2="88" y2="5"/>
+      <line x1="20" y1="56" x2="96" y2="13"/><line x1="28" y1="64" x2="104" y2="21"/>
+      <line x1="36" y1="72" x2="112" y2="29"/>
+    </g>
+    <polygon points="60,16 104,40 104,84 60,108 16,84 16,40" fill="none" stroke="#5d666d" stroke-width="1.5" stroke-linejoin="round"/>
+    <line x1="60" y1="64" x2="60" y2="108" stroke="#5d666d" stroke-width="1.1"/>
+    <polygon points="60,16 104,40 60,64 16,40" fill="none" stroke="#5d666d" stroke-width="1.5" stroke-linejoin="round"/>
+  </symbol>
+</svg>
+
+<!-- ===================== COVER ===================== -->
+<section class="cover">
+  <svg class="mark" viewBox="0 0 120 122"><use href="#msmark"/></svg>
+  <div class="est">Family-Owned in Spring Lake, Michigan</div>
+  <h1>MICHIGAN<span class="l2">SHIPPERS</span></h1>
+  <span class="supply">Supply</span>
+  <p class="bk">The Brand Bible</p>
+  <p class="tag">Custom labels that help small brands get noticed. Printed by hand, by family, since 1959.</p>
+  <div class="rule"></div>
+  <div class="meta">
+    <span>Edition 01</span><span class="dot">&middot;</span><span>2026</span><span class="dot">&middot;</span><span>67 Years In Business</span><span class="dot">&middot;</span><span>Internal &amp; Partner Use</span>
+  </div>
+</section>
+
+<!-- ===================== 01 THE COMPANY ===================== -->
+<section class="spread">
+  <div class="secno">01 / The Company</div>
+  <div class="eyebrow">Who we are</div>
+  <div class="shead"><h2>A family business<br>built on people, not just presses.</h2></div>
+
+  <p class="big-quote">Anyone can sell you a roll of labels.<br>We help you build a <span class="b">brand</span>, and<br>we've done it for 67 years.</p>
+
+  <div class="cols">
+    <div class="card">
+      <div class="num">01</div>
+      <h3>The one-liner</h3>
+      <p>Michigan Shippers Supply is a family-owned custom label printer in Spring Lake, Michigan. We design and print the labels that turn small products into real brands, <span class="hl">and we've been doing it since 1959.</span></p>
+    </div>
+    <div class="card">
+      <div class="num">02</div>
+      <h3>What we actually sell</h3>
+      <p>Not just ink on a roll. We sell <span class="hl">a label that does its job</span>, looks like the quality inside, passes the rules, and makes a maker proud to put it on the shelf. Every product becomes a billboard for the brand.</p>
+    </div>
+    <div class="card">
+      <div class="num">03</div>
+      <h3>Who we serve</h3>
+      <p>Startups, makers, and growing product brands across <span class="hl">Michigan, Indiana, Ohio, and Illinois</span>. Food and beverage makers, candy, wine and craft drinks, plus retail and warehouse barcode and shipping needs.</p>
+    </div>
+    <div class="card">
+      <div class="num">04</div>
+      <h3>Why it matters</h3>
+      <p>We're a small business too, so we get it. We're <span class="hl">small enough to care about your first run, experienced enough to handle your biggest order.</span> Our name is on every roll we ship.</p>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="n">1959</div><div class="l">Family-owned since</div></div>
+    <div class="stat"><div class="n">In&nbsp;House</div><div class="l">Design team that builds your brand</div></div>
+    <div class="stat"><div class="n">2</div><div class="l">Print methods, flexo &amp; digital</div></div>
+    <div class="stat"><div class="n">4</div><div class="l">States served, MI &middot; IN &middot; OH &middot; IL</div></div>
+  </div>
+</section>
+
+<!-- ===================== 02 POSITIONING ===================== -->
+<section class="spread alt">
+  <div class="secno">02 / Positioning</div>
+  <div class="wrap">
+  <div class="eyebrow">Where we stand</div>
+  <div class="shead">
+    <h2>The label partner the big self-serve sites can't be.</h2>
+    <p>The label market is crowded with cheap, fast, click-to-order websites and with big printers that want big minimums. We win in the middle, where real brands get built.</p>
+  </div>
+
+  <div class="cols">
+    <div class="card">
+      <h3 style="color:var(--blue-dark)">What we are</h3>
+      <p>The affordable, experienced, regional label partner for small and growing product brands. Real people who help you get it right, real design help, flexible run sizes, and compliance know-how, <span class="hl">without big-printer pricing or scary minimums.</span></p>
+    </div>
+    <div class="card">
+      <h3 style="color:#b0483c">What we are not</h3>
+      <p>We are not the cheapest faceless upload-and-pray website, and we don't pretend to be. <span class="hl">We don't compete on being the cheapest click.</span> We compete on getting your label, and your brand, genuinely right.</p>
+    </div>
+  </div>
+
+  <div class="cols-3">
+    <div class="card"><div class="num">Edge 01</div><h3>Heritage</h3><p>Family-owned and operated since 1959. A trust asset almost none of our competitors can claim.</p></div>
+    <div class="card"><div class="num">Edge 02</div><h3>Flexibility</h3><p>Two presses under one roof, so the short startup run and the long production run both get the right method. Never an upsell.</p></div>
+    <div class="card"><div class="num">Edge 03</div><h3>Closeness</h3><p>An in-house design team and a dedicated specialist who learn your business. Regional, responsive, and on a first-name basis.</p></div>
+  </div>
+  </div>
+</section>
+
+<!-- ===================== 03 THE LOGO ===================== -->
+<section class="spread">
+  <div class="secno">03 / The Logo</div>
+  <div class="eyebrow">The mark</div>
+  <div class="shead">
+    <h2>The logo</h2>
+    <p>An isometric box, lined like a fresh print pulling off the press and grounded by a press-blue base. It reads as a package and a printed label at once, the two things this company has always made. Keep it confident, keep it square, keep it clear.</p>
+  </div>
+
+  <!-- primary lockup -->
+  <div class="logo-hero">
+    <img src="images/logo-horizontal.png" alt="Michigan Shippers Supply primary horizontal logo" />
+  </div>
+
+  <div class="logo-grid">
+    <div class="logo-tile t-paper"><img src="images/logo-vertical.png" alt="Vertical logo on paper" /><span class="cap">Stacked &middot; on paper</span></div>
+    <div class="logo-tile t-navy"><img src="images/logo-vertical-light.png" alt="Knockout logo on navy" /><span class="cap">Knockout &middot; on navy</span></div>
+    <div class="logo-tile t-cool"><svg viewBox="0 0 120 122" style="height:96px;width:auto"><use href="#msmark"/></svg><span class="cap">The mark &middot; alone</span></div>
+  </div>
+
+  <!-- clear space -->
+  <div class="clearspace">
+    <div class="box"><img src="images/logo-mark.png" alt="Logo mark with clear space" /></div>
+    <div class="txt">
+      <h4>Clear space &amp; minimum size</h4>
+      <p>Hold clear space of at least the height of the box mark on every side. Never crowd the logo with text, photos, or other logos. Keep the wordmark legible: never place the horizontal lockup below about 130px wide on screen, or 1 inch in print.</p>
+    </div>
+  </div>
+
+  <div class="do-dont">
+    <div class="dd do">
+      <h4>Always</h4>
+      <ul>
+        <li>Lead with the full lockup, mark plus wordmark, for first impressions.</li>
+        <li>Use the knockout version on navy and other dark grounds.</li>
+        <li>Keep the box mark's print lines and blue base intact.</li>
+        <li>Give it room to breathe.</li>
+      </ul>
+    </div>
+    <div class="dd dont">
+      <h4>Never</h4>
+      <ul>
+        <li>Recolor the mark or swap the press blue for another color.</li>
+        <li>Stretch, skew, rotate, or add drop shadows and outlines.</li>
+        <li>Rebuild the wordmark in a different typeface.</li>
+        <li>Place it on a busy photo with no clear, calm backing.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 04 COLOR ===================== -->
+<section class="spread alt">
+  <div class="secno">04 / Color</div>
+  <div class="wrap">
+  <div class="eyebrow">The palette</div>
+  <div class="shead">
+    <h2>Color</h2>
+    <p>Three families. <b style="color:var(--blue-dark)">Heritage neutrals</b> are the paper and ink everything sits on. <b style="color:var(--blue-dark)">Press Blue</b> is the signature, pulled straight from the mark. <b style="color:var(--gold-dk)">White-Glove Gold</b> is a rare premium accent, used only for the managed program.</p>
+  </div>
+
+  <div class="pal-name"><h3>Heritage neutrals</h3><span>paper, ink, and the grounds we build on</span></div>
+  <div class="sw-grid">
+    <div class="sw"><div class="chip ring" style="background:#f4f1ea"></div><div class="meta"><div class="nm">Heritage Cream</div><div class="hx">#F4F1EA</div><div class="role">Primary paper / background</div></div></div>
+    <div class="sw"><div class="chip ring" style="background:#e9ebee"></div><div class="meta"><div class="nm">Cool Mist</div><div class="hx">#E9EBEE</div><div class="role">Alternate panels</div></div></div>
+    <div class="sw"><div class="chip" style="background:#1c2c3e"></div><div class="meta"><div class="nm">Brand Navy <span class="star">&#9733;</span></div><div class="hx">#1C2C3E</div><div class="role">Headlines / dark grounds</div></div></div>
+    <div class="sw"><div class="chip" style="background:#6c7a85"></div><div class="meta"><div class="nm">Steel Grey</div><div class="hx">#6C7A85</div><div class="role">The mark's faces / muted text</div></div></div>
+  </div>
+
+  <div class="pal-name"><h3>Press Blue</h3><span>the signature, taken from the logo's base</span></div>
+  <div class="sw-grid">
+    <div class="sw"><div class="chip" style="background:#2f7dc1"></div><div class="meta"><div class="nm">Press Blue <span class="star">&#9733;</span></div><div class="hx">#2F7DC1</div><div class="role">Primary brand accent</div></div></div>
+    <div class="sw"><div class="chip" style="background:#215e93"></div><div class="meta"><div class="nm">Deep Press</div><div class="hx">#215E93</div><div class="role">Links, buttons, hovers</div></div></div>
+    <div class="sw"><div class="chip" style="background:#7bb6e6"></div><div class="meta"><div class="nm">Sky Tint</div><div class="hx">#7BB6E6</div><div class="role">Accents on navy grounds</div></div></div>
+    <div class="sw"><div class="chip ring" style="background:#222e39"></div><div class="meta"><div class="nm">Slate Ink</div><div class="hx">#222E39</div><div class="role">Body text on paper</div></div></div>
+  </div>
+
+  <div class="pal-name"><h3>White-Glove Gold</h3><span>premium accent, used sparingly</span></div>
+  <div class="sw-grid">
+    <div class="sw"><div class="chip" style="background:linear-gradient(180deg,#ecd6a4,#cda85e)"></div><div class="meta"><div class="nm">Glove Gold</div><div class="hx">#CDA85E</div><div class="role">Managed-program accent only</div></div></div>
+    <div class="sw"><div class="chip" style="background:#ecd6a4"></div><div class="meta"><div class="nm">Light Gold</div><div class="hx">#ECD6A4</div><div class="role">Gold text on navy</div></div></div>
+    <div class="sw"><div class="chip" style="background:#b58a3c"></div><div class="meta"><div class="nm">Deep Gold</div><div class="hx">#B58A3C</div><div class="role">Edges &amp; shadow</div></div></div>
+    <div class="sw"><div class="chip ring" style="background:#d7d3ca"></div><div class="meta"><div class="nm">Rule Line</div><div class="hx">#D7D3CA</div><div class="role">Hairlines &amp; borders</div></div></div>
+  </div>
+
+  <div class="note gold">Gold is a guest, not a host. Reserve it for the White-Glove Managed Inventory program so it stays special. Everyday materials lead with Press Blue on Heritage Cream, anchored by Brand Navy.</div>
+  </div>
+</section>
+
+<!-- ===================== 05 TYPOGRAPHY ===================== -->
+<section class="spread">
+  <div class="secno">05 / Type</div>
+  <div class="eyebrow">The type system</div>
+  <div class="shead">
+    <h2>Typography</h2>
+    <p>Two typefaces do all the work, and they're built into every device, so the brand reads the same everywhere with nothing to download. Serif for heritage and headlines, sans for clean, plain talk.</p>
+  </div>
+
+  <div class="type-spec">
+    <div class="role">Display &middot; headlines &middot; the wordmark</div>
+    <div class="name">Georgia</div>
+    <div class="glyphs">ABCDEFGHIJKLMNOPQRSTUVWXYZ &middot; 0123456789</div>
+    <div class="use"><b>Use for:</b> headlines, the MICHIGAN SHIPPERS wordmark, big statements, and pull quotes. It carries the 67 years. Set it in navy, bold, with comfortable line height.</div>
+  </div>
+
+  <div class="type-spec">
+    <div class="role">Body &middot; labels &middot; everything readable</div>
+    <div class="name sans">Helvetica / System Sans</div>
+    <div class="glyphs sans">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnop &middot; 0123456789</div>
+    <div class="use"><b>Use for:</b> body copy, captions, forms, and the SUPPLY &middot; EST. 1959 line under the wordmark, set in wide letter-spaced caps. This is the voice talking plainly. Weights 400 to 800.</div>
+  </div>
+
+  <div class="note">One rule above all: don't mix in random fonts. Georgia and the system sans cover every job. The wordmark's caps-and-spacing treatment of "SUPPLY &middot; EST. 1959" is part of the logo, never retype it freehand in body copy.</div>
+</section>
+
+<!-- ===================== 06 VOICE ===================== -->
+<section class="spread alt">
+  <div class="secno">06 / Voice</div>
+  <div class="wrap">
+  <div class="eyebrow">How we talk</div>
+  <div class="shead"><h2>Brand voice</h2></div>
+
+  <p class="lead">We talk like a <span class="b">neighbor</span> who happens to be the <span class="b">expert</span>, warm, plain, and never pushy.</p>
+
+  <div class="voice-grid">
+    <div class="vc">
+      <h4>Tone</h4>
+      <div class="row">
+        <span class="chip-tag">Warm</span><span class="chip-tag">Plain-spoken</span>
+        <span class="chip-tag">Reassuring</span><span class="chip-tag">Proud of the work</span>
+        <span class="chip-tag b">Helpful, not salesy</span><span class="chip-tag no">Never corporate</span>
+      </div>
+    </div>
+    <div class="vc">
+      <h4>Signature moves</h4>
+      <div class="row">
+        <span class="chip-tag">Explain flexo vs. digital in human terms</span>
+        <span class="chip-tag">Lead with heritage</span>
+        <span class="chip-tag">Reassure on compliance</span>
+        <span class="chip-tag b">Tasteful ALL-CAPS for emphasis</span>
+      </div>
+    </div>
+    <div class="vc">
+      <h4>We say</h4>
+      <p class="say"><b>"We're a small business too, so we get it."</b><br>"Small enough to care about your first run, experienced enough to handle your biggest order."<br>"Every product becomes a billboard for your brand."<br>"Never an upsell." &middot; "We'll make sure it's right."</p>
+    </div>
+    <div class="vc">
+      <h4>We don't say</h4>
+      <p class="say">No hype, no jargon, no pressure. We don't call ourselves "cheap," we say <b>fair</b>. We don't oversell, we explain. We never make a maker feel small for asking, or for ordering small.</p>
+    </div>
+  </div>
+
+  <div class="note">A label does three jobs, and our copy keeps coming back to them: it earns attention on a crowded shelf, it meets the rules (food, beverage, and product compliance), and it builds the brand. Sell the job, not the ink.</div>
+  </div>
+</section>
+
+<!-- ===================== 07 WHAT WE PRINT ===================== -->
+<section class="spread">
+  <div class="secno">07 / Capabilities</div>
+  <div class="eyebrow">What we print</div>
+  <div class="shead">
+    <h2>Labels for every product you make</h2>
+    <p>Designed and printed in house, on the right press for the job. From a first short run of candy labels to long production rolls and the foil lids most printers won't touch.</p>
+  </div>
+
+  <div class="cap-grid">
+    <div class="cap"><span class="ic">&#127991;&#65039;</span><div><b>Product labels</b><small>Shelf-ready labels that look like the quality inside.</small></div></div>
+    <div class="cap"><span class="ic">&#129368;</span><div><b>Wine, beer &amp; beverage</b><small>Premium bottle and can labels, batch after batch.</small></div></div>
+    <div class="cap"><span class="ic">&#127853;</span><div><b>Candy</b><small>A named niche we've printed for years.</small></div></div>
+    <div class="cap"><span class="ic">&#129362;</span><div><b>Food &amp; packaging</b><small>Built right for FDA and regulatory compliance.</small></div></div>
+    <div class="cap"><span class="ic">&#9749;</span><div><b>Foil lids &amp; tin</b><small>Keurig-compatible foil lids, plus metal and tin.</small></div></div>
+    <div class="cap"><span class="ic">&#9114;&#65039;</span><div><b>Barcode &amp; shipping</b><small>Retail and warehouse ID, with your brand on it.</small></div></div>
+  </div>
+
+  <div class="method">
+    <div class="m">
+      <div class="k">Long runs</div>
+      <h4>Flexographic press</h4>
+      <p>Efficient and consistent for larger production runs. The workhorse for growing and established brands that need volume, quality, and a reliable repeat.</p>
+    </div>
+    <div class="m">
+      <div class="k">Short runs</div>
+      <h4>Digital press</h4>
+      <p>Fast turns, variable data, and friendly minimums for startups and quick jobs. The right method for a first run, a test, or a small batch, with no big upfront commitment.</p>
+    </div>
+  </div>
+
+  <div class="note">This dual capability is a real differentiator, say it plainly. We give every customer the right method for the job, never an upsell, plus an in-house design team that can start from a sketch, an idea, or nothing at all.</div>
+</section>
+
+<!-- ===================== 08 WHITE GLOVE ===================== -->
+<section class="spread dark">
+  <div class="secno" style="color:#caa45f">08 / White-Glove</div>
+  <div class="wrap">
+  <div class="eyebrow" style="color:var(--gold-lt)"><span style="background:var(--gold);width:26px;height:2px;display:inline-block;margin-right:.8em"></span>The premium program</div>
+  <div class="shead">
+    <h2 style="color:#f5edda">Never wait. Never compromise.</h2>
+    <p style="color:#c7bda6">Our flagship managed program is the one part of the brand that wears gold. It's white-glove from day one, and it's the partnership the big self-serve printers simply can't offer.</p>
+  </div>
+
+  <div class="glove-card">
+    <div class="accent"></div>
+    <div class="glove-head">
+      <span class="glove-badge">&#9733; Managed Inventory &amp; Just-in-Time Printing</span>
+      <h3>White-glove label management, built around one business, yours.</h3>
+      <p class="glead">Keep only a day's or a week's supply on the shelf. We hold the rest and print to real demand, in real time, so a customer frees up cash and space, skips big upfront runs, and never runs out.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar"><h4>Dedicated specialist</h4><p>One point of contact who knows your products, your timing, and your standards.</p></div>
+      <div class="pillar"><h4>Zero downtime</h4><p>Stock is held and ready, so production never pauses waiting on labels.</p></div>
+      <div class="pillar"><h4>Printed on demand</h4><p>Produced in real time to actual usage. No overruns, no dead stock.</p></div>
+      <div class="pillar"><h4>No compromise</h4><p>Full custom quality on every batch, exactly to spec, every time.</p></div>
+    </div>
+  </div>
+
+  <div class="note gold" style="background:rgba(201,164,95,.08);border:1px solid rgba(201,164,95,.3);border-left:3px solid var(--gold);color:#d8cbb0">Brand rule: gold, the rotating ring, and "white-glove" language belong to this program only. Used everywhere, it would mean nothing. Used here, it signals the highest level of attention to a customer's brand, with zero wasted downtime, ever.</div>
+  </div>
+</section>
+
+<!-- ===================== 09 PROOF ===================== -->
+<section class="spread">
+  <div class="secno">09 / Proof</div>
+  <div class="eyebrow">Brands we print for</div>
+  <div class="shead">
+    <h2>You've seen our work on the shelf</h2>
+    <p>From beloved national names to fast-growing small brands, these are a few of the companies that trust us to print their single-serve coffee and cocoa lids. When we show proof, we show the real product, never stock mockups.</p>
+  </div>
+
+  <div class="lid-grid">
+    <figure class="lid"><span class="circle"><img src="images/customers/crazy-cups-raspberry.jpg" alt="Crazy Cups Chocolate Raspberry Truffle lid"></span><figcaption>Crazy Cups &middot; Chocolate Raspberry Truffle</figcaption></figure>
+    <figure class="lid"><span class="circle"><img src="images/customers/lake-lodge.jpg" alt="Green Mountain Coffee Lake and Lodge lid"></span><figcaption>Green Mountain Coffee &middot; Lake &amp; Lodge</figcaption></figure>
+    <figure class="lid"><span class="circle"><img src="images/customers/brooklyn-bean.jpg" alt="Brooklyn Bean Carnival hot cocoa lid"></span><figcaption>Brooklyn Bean &middot; Carnival Hot Cocoa</figcaption></figure>
+    <figure class="lid"><span class="circle"><img src="images/customers/mucho-gusto.jpg" alt="Mucho Gusto Chocolate con Leche lid"></span><figcaption>Mucho Gusto &middot; Chocolate con Leche</figcaption></figure>
+    <figure class="lid"><span class="circle"><img src="images/customers/crazy-cups-coconut.jpg" alt="Crazy Cups Island Rum Coconut lid"></span><figcaption>Crazy Cups &middot; Island Rum Coconut</figcaption></figure>
+    <figure class="lid"><span class="circle"><img src="images/customers/roasty-buds.jpg" alt="Roasty Buds coffee lid"></span><figcaption>Roasty Buds &middot; Single-Serve Coffee</figcaption></figure>
+  </div>
+
+  <figure class="photo-band">
+    <img src="images/press-printing.jpg" alt="A press at Michigan Shippers Supply running a roll of branded labels">
+    <figcaption>Two presses, one standard: excellent. Short runs digital, long runs flexographic.</figcaption>
+  </figure>
+</section>
+
+<!-- ===================== 10 STANDARDS ===================== -->
+<section class="spread alt">
+  <div class="secno">10 / Standards</div>
+  <div class="wrap">
+  <div class="eyebrow">The rules</div>
+  <div class="shead">
+    <h2>Do &amp; don't</h2>
+    <p>The shortlist that keeps every quote, label, web page, and conversation unmistakably Michigan Shippers Supply.</p>
+  </div>
+
+  <div class="rules">
+    <div class="rule-col do">
+      <h3>&#10003; Always</h3>
+      <ul>
+        <li>Lead with heritage: family-owned since 1959.</li>
+        <li>Press Blue on Heritage Cream, anchored by Brand Navy.</li>
+        <li>Georgia for headlines, system sans for everything readable.</li>
+        <li>Talk plainly and reassure on compliance.</li>
+        <li>Show real printed product as proof.</li>
+        <li>Give the customer the right press, never an upsell.</li>
+        <li>Reserve gold for the White-Glove program.</li>
+      </ul>
+    </div>
+    <div class="rule-col dont">
+      <h3>&#10007; Never</h3>
+      <ul>
+        <li>Sound corporate, hypey, or high-pressure.</li>
+        <li>Recolor, stretch, or rebuild the logo.</li>
+        <li>Compete on being "the cheapest click."</li>
+        <li>Use gold or "white-glove" language off-program.</li>
+        <li>Mix in random fonts or stock mockups.</li>
+        <li>Run inconsistent name, address, or phone anywhere.</li>
+        <li>Make a maker feel small for ordering small.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="note">A note on the name: the brand and marketing name is <b>Michigan Shippers Supply</b> (no apostrophe), matching the logo and the website. The legal name, <b>Michigan Shippers' Supply, Inc.</b>, keeps its apostrophe for contracts and invoices. Pick one in public and stay consistent, mismatched name, address, and phone data is the single most common thing that buries a local business in search.</div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT (dark) ===================== -->
+<section class="spread dark">
+  <div class="secno">11 / Contact</div>
+  <div class="wrap">
+  <div class="eyebrow">The essentials</div>
+  <div class="shead"><h2 style="color:#fff">One company, one set of facts.</h2>
+    <p style="color:#c2cfda">Use these exactly as written, on the website, in listings, on every label and invoice. Consistency is a brand asset.</p>
+  </div>
+  <div class="contact-grid">
+    <div class="cinfo"><span class="ic">&#9993;&#65039;</span><div><b>Email</b><a href="mailto:sales@michiganshippers.com">sales@michiganshippers.com</a></div></div>
+    <div class="cinfo"><span class="ic">&#128222;</span><div><b>Call</b><span><a href="tel:+16169356680">(616) 935-6680</a> &middot; Toll-free <a href="tel:+18004424639">(800) 442-4639</a></span></div></div>
+    <div class="cinfo"><span class="ic">&#128205;</span><div><b>Visit / Mail</b><span>17369 Taft Rd, Spring Lake, MI 49456</span></div></div>
+    <div class="cinfo"><span class="ic">&#128336;</span><div><b>Hours</b><span>Monday to Friday, 9:00 AM to 5:00 PM</span></div></div>
+  </div>
+  </div>
+</section>
+
+<!-- ===================== BACK COVER ===================== -->
+<section class="back">
+  <svg class="mark" viewBox="0 0 120 122"><use href="#msmark"/></svg>
+  <p class="motto">Small enough to care.<br><span class="b">Experienced enough</span> to deliver.</p>
+  <div class="rule"></div>
+  <p class="fine">Michigan Shippers Supply &middot; Spring Lake, Michigan<br>Custom Label Printing Since 1959 &middot; Edition 01 &middot; 2026</p>
+</section>
+
+</body>
+</html>
